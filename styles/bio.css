@@ -1,1 +1,48 @@
-/*# sourceMappingURL=bio.css.map */
+/*--------------- Global --------------------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: avenirBold;
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+@font-face {
+  font-family: avenirDemi;
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+  font-family: avenirRegular;
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+/*----------------- NAV ---------------------*/
+.nav {
+  background-color: #323232;
+}
+
+.nav__link {
+  display: flex;
+  justify-content: center;
+}
+
+.nav__logo {
+  padding-top: 16px;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav__list__item {
+  font-family: avenirRegular;
+  padding: 16px 0;
+  font-size: 24px;
+  color: white;
+}/*# sourceMappingURL=bio.css.map */
