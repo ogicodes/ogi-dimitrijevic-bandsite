@@ -1,4 +1,8 @@
 /*--------------- Global --------------------*/
+
+@use './partials/global.scss' as *;
+@use './partials/variables.scss' as *;
+@use './partials/mixins' as *;
 *, 
 *::before, 
 *::after {
@@ -7,49 +11,124 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: avenirBold;
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-}
-
-@font-face {
-    font-family: avenirDemi;
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
-}
-
-@font-face {
-    font-family: avenirRegular;
-    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
-}
-
-
 
 /*----------------- NAV ---------------------*/
 
 .nav {
-    background-color: #323232;
+    background-color: $site-black;
+
+    &__link {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__logo {
+        padding-top: 1rem;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; 
+    }
+
+    &__item {
+        @include subheader-mobile;
+        color: $site-mercury;
+        padding: 1rem 0;
+
+        &:hover {
+            color: $site-white;
+        }
+
+        &--modifier {
+            color: $site-white;
+            border-bottom: solid $site-white;
+            font-weight: 700;
+        }
+    }
 }
 
-.nav__link {
+
+/* --------------------- HERO ---------------------- */
+
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg),;
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
     display: flex;
-    justify-content: center;
+
+    &__title {
+        @include page-header-mobile;
+        color: $site-white; 
+        justify-content: flex-start;
+        align-content: center;
+        padding-left: 1rem;
+    }
 }
 
 
-.nav__logo {
-    padding-top: 16px;
+
+/* ----------------------- MAIN ------------------------ */
+
+
+/* --------------------- ABOUT --------------------- */
+
+.about {
+    padding: 0 1rem;
+
+    &__heading {
+        @include section-header-mobile;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    &__img {
+        max-width: 100%;
+        min-width: 100px;
+        height: auto;
+    }
+
+    &__quote {
+        @include subheader-mobile;
+        padding-top: 1rem;
+    }
+
+    &__subheading {
+        @include subheader-mobile;
+        padding-top: 1.5rem;
+    }
+
+    &__text {
+        @include body-copy-mobile;
+        padding-top: 1rem;
+    }
 }
 
-.nav__list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly; 
+
+/* -------------------- GALLERY --------------------- */
+
+.gallery {
+    padding: 0 1rem;
+
+    &__heading {
+        @include section-header-mobile;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    &__img {
+        max-width: 100%;
+        min-width: 100px;
+        height: auto;
+        padding-bottom: 1rem;
+    }
 }
 
-.nav__list__item {
-    font-family: avenirRegular;
-    padding: 16px 0;
-    font-size: 24px;
-    color: white;
-}
+
+
+/* --------------------- FOOTER --------------------- */
+
