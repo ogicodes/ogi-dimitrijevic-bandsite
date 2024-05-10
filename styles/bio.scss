@@ -173,6 +173,7 @@
 
 .gallery {
     padding: 0 1rem;
+    background-color: $site-alabaster;
 
     &__heading {
         @include section-header-mobile;
@@ -208,22 +209,24 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-bottom: 2rem;
         }
 
         &__item {
-            max-width: 33%;
+            display: flex;
+            max-width: 13.5rem;
             min-width: 6.25rem;
             height: auto;
+            }
         }
 
         &__img {
-            padding: 0.5rem 0.5rem;
+            padding: 0;
         }
     }
-}
 
-//need to make the right padding on the images disappear 
-//need to make the bottom padding on the images bigger
+
 
 
 /* --------------------- FOOTER --------------------- */

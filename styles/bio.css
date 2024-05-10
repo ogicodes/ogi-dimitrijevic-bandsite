@@ -190,6 +190,7 @@
 /* -------------------- GALLERY --------------------- */
 .gallery {
   padding: 0 1rem;
+  background-color: #FAFAFA;
 }
 .gallery__heading {
   font-family: avenirRegular;
@@ -228,15 +229,18 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
   }
   .gallery__item {
-    max-width: 33%;
+    display: flex;
+    max-width: 13.5rem;
     min-width: 6.25rem;
     height: auto;
   }
-  .gallery__img {
-    padding: 0.5rem 0.5rem;
-  }
+}
+.gallery__img {
+  padding: 0;
 }
 
 /* --------------------- FOOTER --------------------- */
