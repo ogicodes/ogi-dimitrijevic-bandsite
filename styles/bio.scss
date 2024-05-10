@@ -2,7 +2,7 @@
 
 @use './partials/global.scss' as *;
 @use './partials/variables.scss' as *;
-@use './partials/mixins' as *;
+@use './partials/mixins.scss' as *;
 
 *, 
 *::before, 
@@ -31,7 +31,7 @@
         list-style: none;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly; 
+        justify-content: space-around; 
     }
 
     &__item {
@@ -41,14 +41,41 @@
 
         &:hover {
             color: $site-white;
-        }
-
-        &--modifier {
-            color: $site-white;
             border-bottom: solid $site-white;
             font-weight: 700;
+            align-self: center;
+            width: 50%;
         }
     }
+
+    // issue: nav list items are not staying centered when you hover over them 
+
+    /* expected output: on hover nav items stay centered and a white border 
+                        takes up half of the available width of the view port.
+    */
+
+    @include respond(tablet) {
+        display: flex;
+        flex-direction: row;
+
+        &__logo {
+            padding: 2.25rem;
+        }
+
+        &__list {
+            align-items: center;
+            justify-content: space-around;
+            width: 30%;
+        }
+
+        &__item {
+
+            &:hover {
+                padding: 2rem 0;
+            }
+        }
+    }
+
 }
 
 
@@ -104,6 +131,41 @@
         @include body-copy-mobile;
         padding-top: 1rem;
     }
+
+    @include respond(tablet) {
+        padding: 0 2.25rem;
+
+        &__heading {
+            @include section-header-dt;
+            padding-top: 3rem;
+            padding-bottom: 2.25rem;
+        }
+
+        &__img {
+            padding: 0 2.25rem;
+        }
+
+        &__quote {
+            @include subheader-dt;
+            padding: 2.25rem 2.25rem 0 2.25rem;
+        }
+    
+        &__subheading {
+            @include subheader-dt;
+            padding: 2.25rem 2.25rem 0 2.25rem;
+        }
+    
+        &__container {
+            display: flex;
+            flex-direction: row;
+            padding: 0 2.25rem;
+        }
+
+        &__text {
+            @include body-copy-dt;
+            padding: 2.25rem 2.25rem 0 0;
+        }
+    }
 }
 
 
@@ -118,14 +180,50 @@
         padding-bottom: 1rem;
     }
 
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     &__img {
         max-width: 100%;
         min-width: 100px;
         height: auto;
         padding-bottom: 1rem;
     }
+
+    @include respond(tablet) {
+        padding: 0 2.25rem;
+
+        &__heading {
+            @include section-header-dt;
+            padding-top: 3rem;
+            padding-bottom: 2.25rem;
+        }
+
+        &__list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            max-width: 33%;
+            min-width: 6.25rem;
+            height: auto;
+        }
+
+        &__img {
+            padding: 0.5rem 0.5rem;
+        }
+    }
 }
 
+//need to make the right padding on the images disappear 
+//need to make the bottom padding on the images bigger
 
 
 /* --------------------- FOOTER --------------------- */
@@ -155,8 +253,6 @@
             padding-left: 0;
         }
     }
-
-
 
     &__subheading {
         @include subheader-mobile;

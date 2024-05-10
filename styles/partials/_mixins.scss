@@ -5,12 +5,14 @@
 /*                  MEDIA QUERY MIXIN                      */
 /*---------------------------------------------------------*/
 
-@mixin respond($breakpoint){
+@mixin respond ($breakpoint) {
+
     @if $breakpoint==tablet {
         @media only screen and (min-width: 768px) {
             @content;
         }
     }
+
     @if $breakpoint==desktop {
         @media only screen and (min-width: 1280px) {
             @content;
@@ -25,7 +27,7 @@
 /*---------------------------------------------------------*/
 
 
-/*TEXT STYLES*/
+// TEXT STYLES
 
 @mixin page-header-mobile(){
     font-family: avenirRegular;
@@ -70,12 +72,49 @@
 }
 
 /*---------------------------------------------------------*/
-/*                    TABLET MIXINS                        */
+/*          TABLET & DESKTOP MIXINS                        */
 /*---------------------------------------------------------*/
 
+// TEXT STYLES
 
+@mixin page-header-dt(){
+    font-family: avenirRegular;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+}
 
+@mixin section-header-dt(){
+    font-family: avenirRegular;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
 
-/*---------------------------------------------------------*/
-/*                    DESKTOP MIXINS                       */
-/*---------------------------------------------------------*/
+@mixin subheader-dt(){
+    font-family: avenirRegular;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+@mixin body-copy-dt(){
+    font-family: avenirRegular;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+
+@mixin footer-copy-dt(){
+    font-family: avenirRegular;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+@mixin labels-and-buttons-dt(){
+    font-family: avenirRegular;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
