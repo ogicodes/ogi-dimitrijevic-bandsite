@@ -269,6 +269,13 @@
 
         &__img {
             padding: 0;
+            filter: grayscale(100%);
+            transition: 0.5s all ease-in-out;
+
+
+            &:hover {
+                filter: grayscale(0%);
+            }
         }
     }
     // GALLERY DESKTOP STYLING
