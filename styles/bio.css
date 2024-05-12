@@ -36,9 +36,6 @@
 /*----------------- NAV ---------------------*/
 .nav {
   background-color: #323232;
-  /* expected output: on hover nav items stay centered and a white border 
-                      takes up half of the available width of the view port.
-  */
 }
 .nav__link {
   display: flex;
@@ -60,6 +57,9 @@
   font-weight: 600;
   color: #E1E1E1;
   padding: 1rem 0;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
 .nav__item:hover {
   color: white;
@@ -67,6 +67,8 @@
   font-weight: 700;
   align-self: center;
   width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .nav {
@@ -79,10 +81,15 @@
   .nav__list {
     align-items: center;
     justify-content: space-around;
-    width: 30%;
+    min-width: 13rem;
   }
   .nav__item:hover {
     padding: 2rem 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .nav__list {
+    min-width: 10rem;
   }
 }
 
@@ -92,7 +99,7 @@
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-size: cover;
   background-position: center;
-  height: 40vh;
+  min-height: 40vh;
   display: flex;
 }
 .hero__title {
@@ -104,6 +111,21 @@
   justify-content: flex-start;
   align-content: center;
   padding-left: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .hero__title {
+    font-family: avenirRegular;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+    padding-left: 2.25rem;
+    min-height: 60vh;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__title {
+    min-height: 100vh;
+  }
 }
 
 /* --------------------- ABOUT --------------------- */
@@ -186,6 +208,24 @@
     padding: 2.25rem 2.25rem 0 0;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .about {
+    padding: 0 4.5rem;
+  }
+  .about__img {
+    padding: 0 7rem;
+    max-width: 98%;
+  }
+  .about__quote {
+    padding: 2.25rem 7rem 0 7rem;
+  }
+  .about__subheading {
+    padding: 2.25rem 7rem 0 7rem;
+  }
+  .about__container {
+    padding: 0 7rem;
+  }
+}
 
 /* -------------------- GALLERY --------------------- */
 .gallery {
@@ -208,7 +248,7 @@
 }
 .gallery__img {
   max-width: 100%;
-  min-width: 100px;
+  min-width: 6.25rem;
   height: auto;
   padding-bottom: 1rem;
 }
@@ -227,20 +267,22 @@
   .gallery__list {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     gap: 1.5rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
   .gallery__item {
-    display: flex;
-    max-width: 13.5rem;
-    min-width: 6.25rem;
-    height: auto;
+    max-width: 32.2%;
   }
 }
 .gallery__img {
   padding: 0;
+}
+@media only screen and (min-width: 1280px) {
+  .gallery {
+    padding: 0 4.5rem;
+  }
 }
 
 /* --------------------- FOOTER --------------------- */
@@ -283,15 +325,110 @@
   font-weight: 400;
   padding-bottom: 1rem;
 }
+.footer__copyright {
+  font-family: avenirRegular;
+  font-size: 0.6875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
 .footer__mail {
   font-family: avenirRegular;
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   line-height: 1.125rem;
   font-weight: 400;
   text-decoration: none;
   color: white;
 }
-.footer__logo {
+.footer__logoM {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
+}
+.footer__logoT {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 0 2.25rem;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .footer__test1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer__test2 {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .footer__heading {
+    font-family: avenirRegular;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    padding-right: 2.25rem;
+  }
+  .footer__list {
+    align-items: center;
+  }
+  .footer__list__item {
+    padding: 0;
+  }
+  .footer__logoT {
+    display: block;
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+    width: 100%;
+  }
+  .footer__section {
+    width: 30%;
+  }
+  .footer__subheading {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    font-weight: 700;
+  }
+  .footer__text {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+  .footer__mail {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+  }
+  .footer__logoM {
+    display: none;
+  }
+  .footer__copyright {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer {
+    padding: 0 4.5rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
