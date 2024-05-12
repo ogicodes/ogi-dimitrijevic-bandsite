@@ -273,15 +273,18 @@
     width: 100%;
   }
   .gallery__item {
-    max-width: 32.2%;
+    max-width: 31%;
   }
-}
-.gallery__img {
-  padding: 0;
+  .gallery__img {
+    padding: 0;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .gallery {
     padding: 0 4.5rem;
+  }
+  .gallery__item {
+    max-width: 31.9%;
   }
 }
 
@@ -353,14 +356,14 @@
     display: flex;
     flex-flow: row wrap;
   }
-  .footer__test1 {
+  .footer__top-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
-  .footer__test2 {
+  .footer__top-container__left {
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -383,7 +386,7 @@
   .footer__logoT {
     display: block;
   }
-  .footer__container {
+  .footer__mid-container {
     display: flex;
     flex-direction: row;
     -moz-column-gap: 3rem;
