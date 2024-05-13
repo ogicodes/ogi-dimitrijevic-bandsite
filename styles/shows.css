@@ -33,6 +33,9 @@
 /*---------------------------------------------------------*/
 /*          TABLET & DESKTOP MIXINS                        */
 /*---------------------------------------------------------*/
+/*--------------- NAV & FOOTER ---------------*/
+/*--------------- IMPORTS --------------------*/
+/*--------------- Global --------------------*/
 /*----------------- NAV ---------------------*/
 .nav {
   background-color: #323232;
@@ -40,12 +43,6 @@
 .nav__link {
   display: flex;
   justify-content: center;
-  text-decoration: none;
-  font-family: avenirRegular;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-  color: #E1E1E1;
 }
 .nav__logo {
   padding-top: 1rem;
@@ -445,4 +442,4 @@
   .footer {
     padding: 0 4.5rem;
   }
-}/*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=shows.css.map */

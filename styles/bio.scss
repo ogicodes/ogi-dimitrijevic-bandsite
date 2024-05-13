@@ -1,17 +1,8 @@
-/*--------------- Global --------------------*/
+/*--------------- IMPORTS --------------------*/
 
 @use './partials/global.scss' as *;
 @use './partials/variables.scss' as *;
 @use './partials/mixins.scss' as *;
-
-*, 
-*::before, 
-*::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 
 /*----------------- NAV ---------------------*/
 
@@ -21,6 +12,9 @@
     &__link {
         display: flex;
         justify-content: center;
+        text-decoration: none;
+        @include subheader-mobile;
+        color: $site-mercury;
     }
 
     &__logo {
