@@ -283,6 +283,19 @@
     }
 }    
 
+/* --------------------- COMMENTS --------------------- */
+
+.comments {
+    padding: 0 1rem;
+    background-color: $site-white;
+
+    &__heading {
+        @include section-header-mobile;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}
+
 
 
 

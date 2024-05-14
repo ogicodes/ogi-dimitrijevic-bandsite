@@ -299,6 +299,20 @@
   }
 }
 
+/* --------------------- COMMENTS --------------------- */
+.comments {
+  padding: 0 1rem;
+  background-color: white;
+}
+.comments__heading {
+  font-family: avenirRegular;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
 /* --------------------- FOOTER --------------------- */
 .footer {
   background-color: #323232;
