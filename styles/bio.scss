@@ -283,7 +283,7 @@
     }
 }    
 
-/* --------------------- COMMENTS --------------------- */
+/* --------------------- COMMENTS FORM & Section --------------------- */
 
 .comments {
     padding: 0 1rem;
@@ -295,7 +295,9 @@
         padding-bottom: 1rem;
     }
 
-    &__image {
+    // Comments Form
+
+    &__avatar {
         width: 36px;
         height: 36px;
         border-radius: 50%;
@@ -359,6 +361,55 @@
             background-color: $site-darkBlack;
             font-weight: 700;
         }
+    }
+
+    // comments section
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid $site-mercury;
+        margin-bottom: 1rem;
+    }
+
+    &__cContainer {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    &__nameContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__image {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 1rem;
+        background-color: $site-mercury;
+        object-fit: cover;
+    }
+
+    &__commentDiv {
+        padding-top: 1rem;
+    }
+
+    &__name {
+        @include body-copy-mobile;
+        font-weight: 700;
+
+    }
+    
+    &__date {
+        @include body-copy-mobile;
+        color: $site-mercury;
+    }
+
+    &__comment {
+        @include body-copy-mobile;
     }
 }
 
