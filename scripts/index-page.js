@@ -1,157 +1,4 @@
 //=============================================================//
-//================== HTML ELEMENT CREATION ====================//
-//=============================================================//
-
-
-// on load instructions
-document.body.onload = addHeading();
-document.body.onload = addCommentSection();
-document.body.onload = addImageContainer();
-document.body.onload = addCommentImage()
-document.body.onload = addCommentContainer()
-document.body.onload = addNameContainer()
-document.body.onload = addName()
-document.body.onload = addDate()
-document.body.onload = addCommentDiv()
-document.body.onload = addcomment()
-
-
-// function that creates heading, adds text to it & adds a css class to it
-
-function addHeading() {
-    //creates heading and the content
-    const commentsHeading = document.createElement('h2')
-    const headingContent = document.createTextNode('Join the Conversation')
-
-    //appends the content to the heading
-    commentsHeading.appendChild(headingContent)
-    commentsHeading.classList.add('comments__heading')
-
-    //appends heading to the comments section
-    const placement = document.querySelector('.comments');
-    placement.appendChild(commentsHeading);
-    
-};
-
-//=======================================================================
-
-function addCommentSection() {
-    //creates comments div and ads a list as a child
-    const commentsContainer = document.createElement('div')
-
-    //adds class to div
-    commentsContainer.classList.add('comments__container')
-
-    //appends div to the comments section
-    const placement = document.querySelector('.comments');
-    placement.appendChild(commentsContainer);
-}
-
-//=======================================================================
-
-function addImageContainer() {
-    //creates image div 
-    const imageContainer = document.createElement('div')
-
-    //adds class to div
-    imageContainer.classList.add('comments__iContainer')
-
-    //appends div to the comments section
-    const placement = document.querySelector('.comments__container');
-    placement.appendChild(imageContainer);
-}
-
-function addCommentImage() {
-    //creates img 
-    const commentsImg = document.createElement('img')
-
-    //adds class to img
-    commentsImg.classList.add('comments__image')
-
-    //appends img to its parent div
-    const placement = document.querySelector('.comments__iContainer');
-    placement.appendChild(commentsImg);
-}
-
-//=========================================================================
-
-function addCommentContainer() {
-    //creates comment div 
-    const commentContainer = document.createElement('div')
-
-    //adds class to div
-    commentContainer.classList.add('comments__cContainer')
-
-    //appends div to the comments section
-    const placement = document.querySelector('.comments__container');
-    placement.appendChild(commentContainer);
-}
-
-//=========================================================================
-
-function addNameContainer() {
-    //creates name div 
-    const nameContainer = document.createElement('div')
-
-    //adds class to div
-    nameContainer.classList.add('comments__nameContainer')
-
-    //appends div to the comment container
-    const placement = document.querySelector('.comments__cContainer');
-    placement.appendChild(nameContainer);
-}
-
-function addName() {
-    //creates name element 
-    const name = document.createElement('p')
-
-    //adds class to element
-    name.classList.add('comments__name')
-
-    //appends element to the name container
-    const placement = document.querySelector('.comments__nameContainer');
-    placement.appendChild(name);
-}
-
-function addDate() {
-    //creates date element 
-    const date = document.createElement('p')
-
-    //adds class to element
-    date.classList.add('comments__date')
-
-    //appends element to the name container
-    const placement = document.querySelector('.comments__nameContainer');
-    placement.appendChild(date);
-}
-
-//=============================================================================
-
-function addCommentDiv() {
-    //creates comment div
-    const commentDiv = document.createElement('div')
-
-    //adds class to div
-    commentDiv.classList.add('comments__commentDiv')
-    //appends div to the comment container
-    const placement = document.querySelector('.comments__cContainer');
-    placement.appendChild(commentDiv);
-}
-
-function addcomment() {
-    //creates date element 
-    const comment = document.createElement('p')
-
-    //adds class to element
-    comment.classList.add('comments__comment')
-
-    //appends element to the name container
-    const placement = document.querySelector('.comments__commentDiv');
-    placement.appendChild(comment);
-}
-
-
-//=============================================================//
 //=================== Comments Functions ======================//
 //=============================================================//
 
@@ -177,4 +24,113 @@ let comments = [
 ]
 
 
+// created a forEach loop that parses over the above array and for every object in the array it creates all of the dom elements needed for the section
+// then it fills the text nodes of the comments with the name, date and comment 
+// loads this onto the page when called
 
+
+function createAttachComments(comments) {
+    comments.forEach((comment) => {
+
+        const commentsContainer = document.createElement('div')
+        commentsContainer.classList.add('comments__container')
+        const containerPlacement = document.querySelector('.comments');
+        containerPlacement.appendChild(commentsContainer);
+
+        const imageContainer = document.createElement('div')
+        imageContainer.classList.add('comments__iContainer')
+        commentsContainer.appendChild(imageContainer);
+
+        const commentsImg = document.createElement('img')
+        commentsImg.classList.add('comments__image')
+        imageContainer.appendChild(commentsImg);
+
+        const commentContainer = document.createElement('div')
+        commentContainer.classList.add('comments__cContainer')
+        commentsContainer.appendChild(commentContainer);
+
+        const nameContainer = document.createElement('div')
+        nameContainer.classList.add('comments__nameContainer')
+        commentContainer.appendChild(nameContainer);
+
+        const name = document.createElement('p')
+        name.classList.add('comments__name')
+        nameContainer.appendChild(name);
+        name.innerText = comment.name
+
+        const date = document.createElement('p')
+        date.classList.add('comments__date')
+        nameContainer.appendChild(date);
+        date.innerText = comment.date
+
+        const commentDiv = document.createElement('div')
+        commentDiv.classList.add('comments__commentDiv')
+        commentContainer.appendChild(commentDiv);
+
+        const commentEl = document.createElement('p')
+        commentEl.classList.add('comments__comment')
+        commentDiv.appendChild(commentEl);
+        commentEl.innerText = comment.comment
+    })
+} 
+
+createAttachComments(comments)
+
+
+// create function that on submit takes user input from the name & comment fields and creates text nodes
+// add these text nodes to the comment section 
+// load this on submit of the form 
+
+function addnewComment(comment) {
+    const commentsContainer = document.createElement('div')
+    commentsContainer.classList.add('comments__container')
+    const containerPlacement = document.querySelector('.comments__form-section');
+    containerPlacement.insertAdjacentElement('afterend', commentsContainer)
+
+    const imageContainer = document.createElement('div')
+    imageContainer.classList.add('comments__iContainer')
+    commentsContainer.appendChild(imageContainer);
+
+    const commentsImg = document.createElement('img')
+    commentsImg.classList.add('comments__image')
+    imageContainer.appendChild(commentsImg);
+
+    const commentContainer = document.createElement('div')
+    commentContainer.classList.add('comments__cContainer')
+    commentsContainer.appendChild(commentContainer);
+
+    const nameContainer = document.createElement('div')
+    nameContainer.classList.add('comments__nameContainer')
+    commentContainer.appendChild(nameContainer);
+
+    const name = document.createElement('p')
+    name.classList.add('comments__name')
+    nameContainer.appendChild(name);
+    name.innerText = comment.name
+
+    const date = document.createElement('p')
+    date.classList.add('comments__date')
+    nameContainer.appendChild(date);
+    date.innerText = comment.date
+
+    const commentDiv = document.createElement('div')
+    commentDiv.classList.add('comments__commentDiv')
+    commentContainer.appendChild(commentDiv);
+
+    const commentEl = document.createElement('p')
+    commentEl.classList.add('comments__comment')
+    commentDiv.appendChild(commentEl);
+    commentEl.innerText = comment.comment
+}
+
+const form = document.getElementById('form')
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const name = e.target.name.value
+    const comment = e.target.comment.value
+    const newComment = {name: name, date: Date(), comment: comment}
+    comments.unshift(newComment)
+    addnewComment(comments[0])      
+})
