@@ -74,12 +74,12 @@ function createAttachComments(comments) {
     })
 } 
 
+// calling above function in order for default comments to be on site when it loads 
+
 createAttachComments(comments)
 
 
-// create function that on submit takes user input from the name & comment fields and creates text nodes
-// add these text nodes to the comment section 
-// load this on submit of the form 
+// created a function that takes one single comment from the comments list as a parameter and loads that onto the page
 
 function addnewComment(comment) {
     const commentsContainer = document.createElement('div')
@@ -123,14 +123,85 @@ function addnewComment(comment) {
     commentEl.innerText = comment.comment
 }
 
-const form = document.getElementById('form')
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
 
-    const name = e.target.name.value
-    const comment = e.target.comment.value
-    const newComment = {name: name, date: Date(), comment: comment}
-    comments.unshift(newComment)
-    addnewComment(comments[0])      
-})
+
+
+function formValidation() {
+    
+    // created form variable to be able to grab the form.
+    const form = document.getElementById('form')
+
+    // added an event listener to the form.
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+    
+        // created variables that listen to see if there is a value added to the name and comment fields.
+        let x = document.forms["form"]["name"].value;
+        let y = document.forms["form"]["comment"].value;
+    
+        // if else block that checks to see if any fields are left empty.
+
+        // if both are empty change color of borders to red and dont submit form.
+
+        if (y == "" && x == "") {
+            const name = document.getElementById('name')
+            const comment = document.getElementById('comment')
+    
+            name.style.border = '1px solid #D22D2D'
+            comment.style.border = '1px solid #D22D2D'
+    
+            return false;
+        }
+
+        // if name is empty change color of border to red and dont submit form.
+        else if (x == "") {
+          const name = document.getElementById('name')
+          name.style.border = '1px solid #D22D2D'
+          return false;
+        }
+    
+        // if comment is empty change color of border to red and dont submit form.
+
+        else if (y == "") {
+            const comment = document.getElementById('comment')
+            comment.style.border = '1px solid #D22D2D'
+            return false;
+        }
+    
+        // else the function will grab the data from both fields, 
+        // create a new comment object, 
+        // add that object to the array,
+        // call the add new comment function on index zero of the array,
+        // and reset the form.
+        else {
+            const name = e.target.name.value
+            const comment = e.target.comment.value
+            const newComment = {name: name, date: Date(), comment: comment}
+            comments.unshift(newComment)
+            addnewComment(comments[0])      
+        
+            form.reset()
+        } 
+    })
+}
+
+formValidation()
+
+
+function formFieldReset() {
+    const name = document.getElementById('name')
+    const comment = document.getElementById('comment')
+
+    name.addEventListener('click', () => {
+        name.style.border = '1px solid #000000'
+    })
+
+    comment.addEventListener('click', () => {
+        comment.style.border = '1px solid #000000'
+    })
+}
+
+formFieldReset()
+
+  

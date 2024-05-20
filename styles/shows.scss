@@ -1,10 +1,124 @@
 /*--------------- IMPORTS --------------------*/
 
-@use './partials/global.scss' as *;
-@use './partials/variables.scss' as *;
-@use './partials/mixins.scss' as *;
+@use './partials/global' as *;
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
 
 
 /*--------------- NAV & FOOTER ---------------*/
 
 @use '../styles/bio.scss' as *;
+
+/*--------------- SHOWS ----------------------*/
+
+.shows {
+    padding: 0 1rem;
+    background-color: $site-white;
+
+    &__heading {
+        @include section-header-mobile;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    &__container {
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $site-mercury;
+    }
+
+    &__subheading {
+        @include footer-copy-mobile;
+        font-weight: 700;
+        color: $site-silver;
+        padding-bottom: .25rem;
+    }
+
+    &__content {
+        @include subheader-mobile;
+        font-weight: 700;
+        color: $site-black;
+        padding-bottom: 1rem;
+    }
+
+    &__button {
+        @include body-copy-mobile;
+        font-weight: 700;
+        color: $site-white;
+        background-color: $site-black;
+        height: 2.5rem;
+        padding: .75rem;
+        width: 100%;
+        border-radius: .25rem;
+        margin: .5rem 0 1rem 0;
+
+        &:hover {
+            background-color: $site-darkBlack;
+            font-weight: 700;
+        }
+    }
+
+    &__responsive {
+        display: none;
+    }
+
+    @include respond(tablet) {
+        padding: 2.25rem;
+
+        &__heading {
+            @include section-header-dt;
+            padding: 0 2.25rem 2.25rem;
+        }
+
+        &__subheading {
+            display: none;
+        }
+
+        &__container {
+            padding: 0 2.25rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+
+        &__button {
+            @include subheader-mobile;
+            width: 30%;
+            height: 3rem;
+        }
+
+        &__responsive {
+            padding: 0 2.25rem;
+            display: flex;
+            padding-left: 4rem;
+
+        }
+
+        &__tablet__subheading {
+            @include footer-copy-dt;
+            font-weight: 700;
+            color: $site-silver;
+            padding-bottom: .25rem;
+            width: 23%;
+
+            &:nth-child(2) {
+                width: 18%;
+            }
+        }
+
+        &__div {
+            width: 25%;
+            height: 3rem;
+            background-color: $site-white;
+        }
+    }
+
+    @include respond(desktop) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        
+        &__top__container {
+            width: 80%;
+        }
+    }
+}

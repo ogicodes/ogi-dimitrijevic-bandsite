@@ -20,9 +20,6 @@
   font-family: avenirRegular;
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
-/*--------------------PRIMARY COLORS ------------------*/
-/*--------------------SECONDARY COLORS ------------------*/
-/*-------------------- FONTS --------------------*/
 /*--------------- IMPORTS --------------------*/
 /*---------------------------------------------------------*/
 /*                  MEDIA QUERY MIXIN                      */
@@ -33,9 +30,12 @@
 /*---------------------------------------------------------*/
 /*          TABLET & DESKTOP MIXINS                        */
 /*---------------------------------------------------------*/
+/*--------------------PRIMARY COLORS ------------------*/
+/*--------------------SECONDARY COLORS ------------------*/
+/*-------------------- FONTS --------------------*/
 /*--------------- NAV & FOOTER ---------------*/
 /*--------------- IMPORTS --------------------*/
-/*--------------- Global --------------------*/
+/*--------------- IMPORTS --------------------*/
 /*----------------- NAV ---------------------*/
 .nav {
   background-color: #323232;
@@ -43,6 +43,12 @@
 .nav__link {
   display: flex;
   justify-content: center;
+  text-decoration: none;
+  font-family: avenirRegular;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  color: #E1E1E1;
 }
 .nav__logo {
   padding-top: 1rem;
@@ -296,6 +302,217 @@
   }
 }
 
+/* --------------------- COMMENTS FORM & Section --------------------- */
+.comments {
+  padding: 0 1rem;
+  background-color: white;
+}
+.comments__heading {
+  font-family: avenirRegular;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.comments__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-top: 1.5rem;
+}
+.comments__form-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.comments__form-container {
+  flex-grow: 2;
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__image-container {
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__input {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: #323232;
+  width: 100%;
+  min-height: 2.25rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #E1E1E1;
+}
+.comments__input:active {
+  border: 1px solid #323232;
+}
+.comments__input--modifier {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: #323232;
+  width: 100%;
+  height: 6rem;
+  min-height: 2.25rem;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #E1E1E1;
+}
+.comments__input--modifier:active {
+  border: 1px solid #323232;
+}
+.comments__label {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
+}
+.comments__button {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: white;
+  background-color: #323232;
+  height: 2.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.comments__button:hover {
+  background-color: #000000;
+  font-weight: 700;
+}
+.comments__container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.comments__cContainer {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__iContainer {
+  border-bottom: 1px solid #E1E1E1;
+}
+.comments__nameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comments__image {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  background-color: #E1E1E1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.comments__commentDiv {
+  padding-top: 1rem;
+}
+.comments__name {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+}
+.comments__date {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #AFAFAF;
+}
+.comments__comment {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media only screen and (min-width: 768px) {
+  .comments {
+    padding: 0 2.25rem;
+  }
+  .comments__heading {
+    font-family: avenirRegular;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+  .comments__form-section {
+    padding: 0 2.25rem;
+  }
+  .comments__container {
+    padding: 0 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+  .comments__form {
+    display: flex;
+    flex-direction: column;
+  }
+  .comments__button {
+    align-self: flex-end;
+    width: 30%;
+  }
+  .comments__avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+  .comments__image {
+    width: 3rem;
+    height: 3rem;
+  }
+  .comments__commentDiv {
+    padding-top: 0.5rem;
+  }
+  .comments__comment {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    padding-bottom: 1.5rem;
+  }
+  .comments__iContainer {
+    padding-top: 1.5rem;
+  }
+  .comments__cContainer {
+    flex-grow: 2;
+  }
+  .comments__nameContainer {
+    padding-top: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comments {
+    padding: 0 4.5rem;
+  }
+  .comments__form-section {
+    padding: 0 16rem;
+  }
+  .comments__container {
+    padding: 0 16rem;
+  }
+}
+
 /* --------------------- FOOTER --------------------- */
 .footer {
   background-color: #323232;
@@ -441,5 +658,124 @@
 @media only screen and (min-width: 1280px) {
   .footer {
     padding: 0 4.5rem;
+  }
+}
+
+/*--------------- SHOWS ----------------------*/
+.shows {
+  padding: 0 1rem;
+  background-color: white;
+}
+.shows__heading {
+  font-family: avenirRegular;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.shows__container {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.shows__subheading {
+  font-family: avenirRegular;
+  font-size: 0.6875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
+}
+.shows__content {
+  font-family: avenirRegular;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 700;
+  color: #323232;
+  padding-bottom: 1rem;
+}
+.shows__button {
+  font-family: avenirRegular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  font-weight: 700;
+  color: white;
+  background-color: #323232;
+  height: 2.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0 1rem 0;
+}
+.shows__button:hover {
+  background-color: #000000;
+  font-weight: 700;
+}
+.shows__responsive {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .shows {
+    padding: 2.25rem;
+  }
+  .shows__heading {
+    font-family: avenirRegular;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    padding: 0 2.25rem 2.25rem;
+  }
+  .shows__subheading {
+    display: none;
+  }
+  .shows__container {
+    padding: 0 2.25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  .shows__button {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+    width: 30%;
+    height: 3rem;
+  }
+  .shows__responsive {
+    padding: 0 2.25rem;
+    display: flex;
+    padding-left: 4rem;
+  }
+  .shows__tablet__subheading {
+    font-family: avenirRegular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    font-weight: 700;
+    color: #AFAFAF;
+    padding-bottom: 0.25rem;
+    width: 23%;
+  }
+  .shows__tablet__subheading:nth-child(2) {
+    width: 18%;
+  }
+  .shows__div {
+    width: 25%;
+    height: 3rem;
+    background-color: white;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .shows__top__container {
+    width: 80%;
   }
 }/*# sourceMappingURL=shows.css.map */
