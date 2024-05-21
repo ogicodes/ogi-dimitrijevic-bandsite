@@ -9,6 +9,100 @@
 
 @use '../styles/bio.scss' as *;
 
+/*----------------- HERO ---------------------*/
+
+/* --------------------- HERO ---------------------- */
+
+.show__hero {
+    position: relative;
+    background: linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg),;
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+
+
+    &__subtitle {
+        @include subheader-mobile;
+        color: $site-white;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 2rem 1rem 0 1rem;
+
+
+    }
+
+    &__embed {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem;
+
+    }
+
+    &__title {
+        @include page-header-mobile;
+        color: $site-white; 
+        justify-content: flex-start;
+        align-content: center;
+        padding: 1rem;
+    }
+        // HERO TABLET STYLING
+
+    @include respond(tablet) {
+        min-height: 60vh;
+
+        &__title {
+            @include page-header-dt;
+            padding-left: 2.25rem;
+        }
+
+        &__subtitle {
+            @include subheader-dt;
+            padding-top: 8vh;
+            padding-left: 2.25rem;
+
+        }
+
+        &__embed {
+            width: 50%;
+            padding-left: 2.25rem;
+
+        }
+
+    }
+
+    // HERO DESKTOP STYLING
+
+    @include respond(desktop) {
+        min-height: 100vh;
+        flex-direction: row;
+        align-items: center;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        &__title {
+            padding-left: 4.5rem;
+        }
+    
+        &__subtitle {
+            padding-left: 4.5rem;
+        }
+    
+        &__embed {
+            height: 15%;
+            width: 50%;
+            padding: 0 4.5rem;
+        }
+    }
+
+}
+
+
+
 /*--------------- SHOWS ----------------------*/
 
 .shows {
