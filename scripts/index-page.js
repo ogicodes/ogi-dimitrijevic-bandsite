@@ -2,26 +2,21 @@
 //=================== Comments Functions ======================//
 //=============================================================//
 
-
 // created an array of objects that holds all of the existing comments 
 
-let comments = [
-    {
-        'name':'Victor Pinto',
-        'date':'11/02/2023',
-        'comment':'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'
-    },
-    {
-        'name':'Christina Cabrera',
-        'date':'10/28/2023',
-        'comment':'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
-    },    
-    {
-        'name':'Isaac Tadesse',
-        'date':'10/20/2023',
-        'comment':`I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.`
-    },
-]
+
+
+async function reciveComments() {
+    const comments = await bandSiteApiComments.getComments()
+
+    createAttachComments(comments)
+}
+
+reciveComments()
+
+async function postNewComment() {
+
+}
 
 
 // created a forEach loop that parses over the above array and for every object in the array it creates all of the dom elements needed for the section
@@ -76,7 +71,7 @@ function createAttachComments(comments) {
 
 // calling above function in order for default comments to be on site when it loads 
 
-createAttachComments(comments)
+//createAttachComments(comments)
 
 
 // created a function that takes one single comment from the comments list as a parameter and loads that onto the page
