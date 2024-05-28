@@ -9,6 +9,7 @@
 
 @use '../styles/bio.scss' as *;
 
+
 /*----------------- HERO ---------------------*/
 
 /* --------------------- HERO ---------------------- */
@@ -118,6 +119,10 @@
     &__container {
         margin-bottom: 1rem;
         border-bottom: 1px solid $site-mercury;
+
+        &:hover {
+            background-color: $site-alabaster;
+        }
     }
 
     &__subheading {

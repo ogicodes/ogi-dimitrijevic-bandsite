@@ -2,15 +2,19 @@
 //===================== Shows Functions =======================//
 //=============================================================//
 
+// function that gets the show data from the api using the bandSiteApiShows instance and the method getShows()
+
 async function reciveShows() {
     const shows = await bandSiteApiShows.getShows()
 
+    // this function also calls the create shows function and supplies it with the show data
     createshows(shows)
 }
 
 reciveShows()
 
 
+// creates the responsive subheading for the mobile and desktop versions of the site
 
 function responsiveSubheading() {
 
@@ -45,6 +49,9 @@ function responsiveSubheading() {
 }
 
 responsiveSubheading()
+
+
+// creates the shows section for the site
 
 function createshows(shows) {
     shows.forEach((show) => {

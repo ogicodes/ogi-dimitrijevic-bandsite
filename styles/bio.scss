@@ -15,6 +15,10 @@
         text-decoration: none;
         @include subheader-mobile;
         color: $site-mercury;
+
+        &--modifier {
+            color: $site-white;
+        }
     }
 
     &__logo {
@@ -35,6 +39,11 @@
         width: 50%;
         margin: 0 auto;
         text-align: center;
+
+        &--modifier {
+            border-bottom: solid $site-white;
+        }
+
 
         &:hover {
             color: $site-white;
@@ -64,6 +73,10 @@
         }
 
         &__item {
+
+            &--modifier {
+                padding: 2rem 0;
+            }
 
             &:hover {
                 padding: 2rem 0;
@@ -124,6 +137,7 @@
 
     &__heading {
         @include section-header-mobile;
+        color: $site-black;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
     }
@@ -136,16 +150,19 @@
 
     &__quote {
         @include subheader-mobile;
+        color: $site-black;
         padding-top: 1rem;
     }
 
     &__subheading {
         @include subheader-mobile;
+        color: $site-black;
         padding-top: 1.5rem;
     }
 
     &__text {
         @include body-copy-mobile;
+        color: $site-black;
         padding-top: 1rem;
     }
 

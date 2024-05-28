@@ -2,29 +2,33 @@
 //=================== Comments Functions ======================//
 //=============================================================//
 
-// created an array of objects that holds all of the existing comments 
 
-
+// function that gets the comments data from the api using the bandSiteApiComments instance and the method getComments()
 
 async function reciveComments() {
     const comments = await bandSiteApiComments.getComments()
 
+    // this function also calls the function to create the comment section
     createAttachComments(comments)
 }
 
 reciveComments()
 
+// function that pushes new comment data to the api using the bandSiteApiPostComments instance and the method postComment()
+
 async function pushNewComment(newComment) {
     await bandSiteApiPostComment.postComment(newComment)
+    // this function also removes the comment section after pushing a new comment to the server
     const clearComments = document.querySelectorAll('.comments__container')
     clearComments.forEach(comment => {
         comment.remove()
     })
+    // lastly it calls the post new comment function 
     postNewComment()
 }
 
 
-
+// function that makes a pull request to the server, grabs the comments array and then reverses it so that the newest comment is first 
 async function postNewComment() {
     const comments = await bandSiteApiComments.getComments()
 
@@ -84,9 +88,7 @@ function createAttachComments(comments) {
     })
 } 
 
-// calling above function in order for default comments to be on site when it loads 
 
-//createAttachComments(comments)
 
 
 // created a function that takes one single comment from the comments list as a parameter and loads that onto the page
@@ -214,3 +216,4 @@ function formFieldReset() {
 formFieldReset()
 
   
+

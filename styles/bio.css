@@ -41,11 +41,14 @@
   display: flex;
   justify-content: center;
   text-decoration: none;
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
   color: #E1E1E1;
+}
+.nav__link--modifier {
+  color: white;
 }
 .nav__logo {
   padding-top: 1rem;
@@ -57,7 +60,7 @@
   justify-content: space-around;
 }
 .nav__item {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
@@ -66,6 +69,9 @@
   width: 50%;
   margin: 0 auto;
   text-align: center;
+}
+.nav__item--modifier {
+  border-bottom: solid white;
 }
 .nav__item:hover {
   color: white;
@@ -89,6 +95,9 @@
     justify-content: space-around;
     min-width: 13rem;
   }
+  .nav__item--modifier {
+    padding: 2rem 0;
+  }
   .nav__item:hover {
     padding: 2rem 0;
   }
@@ -109,7 +118,7 @@
   display: flex;
 }
 .hero__title {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -120,7 +129,7 @@
 }
 @media only screen and (min-width: 768px) {
   .hero__title {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
@@ -139,10 +148,11 @@
   padding: 0 1rem;
 }
 .about__heading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  color: #323232;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
@@ -152,24 +162,27 @@
   height: auto;
 }
 .about__quote {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
+  color: #323232;
   padding-top: 1rem;
 }
 .about__subheading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
+  color: #323232;
   padding-top: 1.5rem;
 }
 .about__text {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
+  color: #323232;
   padding-top: 1rem;
 }
 @media only screen and (min-width: 768px) {
@@ -177,7 +190,7 @@
     padding: 0 2.25rem;
   }
   .about__heading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -188,14 +201,14 @@
     padding: 0 2.25rem;
   }
   .about__quote {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
     padding: 2.25rem 2.25rem 0 2.25rem;
   }
   .about__subheading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
@@ -207,7 +220,7 @@
     padding: 0 2.25rem;
   }
   .about__text {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
@@ -239,7 +252,7 @@
   background-color: #FAFAFA;
 }
 .gallery__heading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -263,7 +276,7 @@
     padding: 0 2.25rem;
   }
   .gallery__heading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -305,7 +318,7 @@
   background-color: white;
 }
 .comments__heading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -333,7 +346,7 @@
   border-bottom: 1px solid #E1E1E1;
 }
 .comments__input {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -350,7 +363,7 @@
   border: 1px solid #323232;
 }
 .comments__input--modifier {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -368,7 +381,7 @@
   border: 1px solid #323232;
 }
 .comments__label {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -377,7 +390,7 @@
   padding-bottom: 0.25rem;
 }
 .comments__button {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -426,21 +439,21 @@
   padding-top: 1rem;
 }
 .comments__name {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   font-weight: 700;
 }
 .comments__date {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   color: #AFAFAF;
 }
 .comments__comment {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -450,7 +463,7 @@
     padding: 0 2.25rem;
   }
   .comments__heading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -482,7 +495,7 @@
     padding-top: 0.5rem;
   }
   .comments__comment {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-weight: 400;
@@ -517,7 +530,7 @@
   padding: 1.5rem 1rem;
 }
 .footer__heading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -537,28 +550,28 @@
   padding-left: 0;
 }
 .footer__subheading {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
   padding-bottom: 1rem;
 }
 .footer__text {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   padding-bottom: 1rem;
 }
 .footer__copyright {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.6875rem;
   line-height: 1.125rem;
   font-weight: 400;
   padding-bottom: 1rem;
 }
 .footer__mail {
-  font-family: avenirRegular;
+  font-family: avenirRegular, Arial, Helvetica, sans-serif;
   font-size: 0.6875rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -591,7 +604,7 @@
     align-items: baseline;
   }
   .footer__heading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
@@ -619,20 +632,20 @@
     width: 30%;
   }
   .footer__subheading {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
     font-weight: 700;
   }
   .footer__text {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
   }
   .footer__mail {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
@@ -643,7 +656,7 @@
     display: none;
   }
   .footer__copyright {
-    font-family: avenirRegular;
+    font-family: avenirRegular, Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
