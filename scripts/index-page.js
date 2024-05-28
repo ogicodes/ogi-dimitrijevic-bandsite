@@ -14,8 +14,23 @@ async function reciveComments() {
 
 reciveComments()
 
-async function postNewComment() {
+async function pushNewComment(newComment) {
+    await bandSiteApiPostComment.postComment(newComment)
+    const clearComments = document.querySelectorAll('.comments__container')
+    clearComments.forEach(comment => {
+        comment.remove()
+    })
+    postNewComment()
+}
 
+
+
+async function postNewComment() {
+    const comments = await bandSiteApiComments.getComments()
+
+    const reverse = createAttachComments(comments.reverse())
+
+    return reverse
 }
 
 
@@ -121,15 +136,14 @@ function addnewComment(comment) {
 
 
 
-
 function formValidation() {
-    
     // created form variable to be able to grab the form.
     const form = document.getElementById('form')
 
     // added an event listener to the form.
     form.addEventListener('submit', (e) => {
         e.preventDefault()
+        
     
         // created variables that listen to see if there is a value added to the name and comment fields.
         let x = document.forms["form"]["name"].value;
@@ -172,10 +186,10 @@ function formValidation() {
         else {
             const name = e.target.name.value
             const comment = e.target.comment.value
-            const newComment = {name: name, date: Date(), comment: comment}
-            comments.unshift(newComment)
-            addnewComment(comments[0])      
-        
+            const newComment = {name: name, comment: comment}
+            //comments.unshift(newComment)
+            //addnewComment(comments[0])  
+            pushNewComment(newComment)
             form.reset()
         } 
     })

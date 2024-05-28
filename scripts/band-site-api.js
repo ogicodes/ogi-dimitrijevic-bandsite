@@ -31,16 +31,30 @@ class BandSiteApi {
         }
     }
 
-    async postData(endpoint, data) {
+    async postComment(data) {
+        const endpoint ='comments'
         try {
             const response = await this.api.post(`${this.baseUrl}${endpoint}?api_key=<${this.apiKey}>`, data)
-            console.log(response.data)
+            return response.data
         }
         catch (error) {
             console.error('Error', error);
             throw error;
         }  
-    }  
+    }
+    
+    async getShows() {
+        const endpoint ='showdates'
+        try {
+            const response = await this.api.get(`${this.baseUrl}${endpoint}?api_key=<${this.apiKey}>`);
+            return response.data
+        } 
+          
+        catch (error) {
+            console.error('Error', error);
+            throw error;
+        }
+    }
 }
 
 
@@ -48,12 +62,8 @@ class BandSiteApi {
 const bandSiteApiComments = new BandSiteApi(apiKey)
 
 const bandSiteApiPostComment = new BandSiteApi(apiKey)
-//const postComment = new BandSiteApi(apiKey)
 
-
-
-
-//postComment.postData('comments',)
+const bandSiteApiShows = new BandSiteApi(apiKey)
 
 
 
